@@ -1,6 +1,9 @@
-import { Request } from 'express';
+import { Request, Response } from 'express';
 import UserCreatesAccountUseCase from "@usecases/user-creates-account";
 import { RequestError } from 'utils/exceptions';
+import UserLoginUseCase from '@usecases/user-login';
+import Jwt from 'utils/jwt';
+import environment from 'utils/environment';
 
 const controllers = {
 
@@ -11,6 +14,19 @@ const controllers = {
                 throw new RequestError(400, err.message);
             });
         return newUser;
+    },
+    userLogin: async (req: Request, res: Response) => {
+
+        const user = await UserLoginUseCase(req.body)
+            .execute()
+            .catch(err => {
+                res.status(err.code).json(err);
+            });
+
+        const token = Jwt.sign({ ...user }, environment.secret);
+        const session: any = req.session;
+        session.user = token;
+        res.status(200).end();
     }
 };
 
