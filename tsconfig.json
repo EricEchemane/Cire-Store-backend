@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES6",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "baseUrl": "src",
+        "paths": {
+            "utils/*": [
+                "utils/*"
+            ],
+            "file_upload/*": [
+                "file_upload/*"
+            ],
+            "socket/*": [
+                "socket/*"
+            ],
+            "@api/*": [
+                "__clean__/@api/*"
+            ],
+            "@entities/*": [
+                "__clean__/@entities/*"
+            ],
+            "@usecases/*": [
+                "__clean__/@usecases/*"
+            ],
+        }
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        // uncomment the lines below when deploying
+        // "**/**/*.spec.ts",
+        // "**/**/*.spec.ts",
+    ]
+}
