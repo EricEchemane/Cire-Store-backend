@@ -16,7 +16,6 @@ export interface IUser {
     store?: IStore;
     cart?: [],
     orders?: [],
-    reviews?: [],
 }
 
 const userSchema = new Schema<IUser>({
