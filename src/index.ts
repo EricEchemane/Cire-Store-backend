@@ -7,7 +7,6 @@ import environment from 'utils/environment';
 import makeSession from 'utils/make-session';
 import mongoose from 'mongoose';
 import { socketConnectionHandler } from './socket';
-import userRoutes from '@api/routes/user.routes';
 
 // exported for testing
 export const app = express();
@@ -19,7 +18,6 @@ app.use(makeSession(environment.secret));
 app.use(cookieParser());
 
 // routes
-app.use('/user', userRoutes);
 
 // exported for testing
 export const server = http.createServer(app);
