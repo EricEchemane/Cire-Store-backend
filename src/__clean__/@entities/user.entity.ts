@@ -10,12 +10,13 @@ export interface IUser {
     lastName: string;
     phone_number: string;
     address: string;
-    wallet: number;
-    cart: [],
-    orders: [],
-    reviews: [],
-    created_at: Date;
+
+    wallet?: number;
+    created_at?: Date;
     store?: IStore;
+    cart?: [],
+    orders?: [],
+    reviews?: [],
 }
 
 const userSchema = new Schema<IUser>({
