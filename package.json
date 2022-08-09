@@ -21,7 +21,8 @@
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
-    "test": "nyc mocha -r tsconfig-paths/register -r ts-node/register src/**/*.spec.ts",
+    "test": "mocha -r tsconfig-paths/register -r ts-node/register src/**/*.spec.ts",
+    "test:cover": "nyc mocha -r tsconfig-paths/register -r ts-node/register src/**/*.spec.ts",
     "build": "tsc --project tsconfig.build.json && resolve-tspaths",
     "bs": "tsc && resolve-tspaths && node .",
     "seed": "tsc && resolve-tspaths && node dist/drivers/db/__seed.js",
