@@ -1,6 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
-import { isValidEmail, lengthOf, isAllNumeric } from './validators';
+import { isValidEmail, lengthOf, isAllNumeric } from '../validators';
 
 describe('validators', () => {
     context('isValidEmail', () => {

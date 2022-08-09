@@ -3,6 +3,7 @@
     // 👇️ this may vary depending on how you
     // name your test files
     "exclude": [
+        "__tests__",
         "src/**/*.spec.ts",
         "src/**/*.test.ts",
         "src/**/__*.ts"
