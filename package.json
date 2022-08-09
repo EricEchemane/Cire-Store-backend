@@ -13,6 +13,11 @@
     "exec": "node -r tsconfig-paths/register -r ts-node/register src/index.ts",
     "ext": "ts, js"
   },
+  "nyc": {
+    "exclude": [
+      "src/utils/environment.ts"
+    ]
+  },
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
