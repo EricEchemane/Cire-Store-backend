@@ -16,7 +16,7 @@
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
-    "test": "mocha -r tsconfig-paths/register -r ts-node/register src/**/*.spec.ts",
+    "test": "nyc mocha -r tsconfig-paths/register -r ts-node/register src/**/*.spec.ts",
     "build": "tsc --project tsconfig.build.json && resolve-tspaths",
     "bs": "tsc && resolve-tspaths && node .",
     "seed": "tsc && resolve-tspaths && node dist/drivers/db/__seed.js",
@@ -60,6 +60,7 @@
     "chai": "^4.3.6",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.19",
+    "nyc": "^15.1.0",
     "resolve-tspaths": "^0.7.4",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.0.0",
